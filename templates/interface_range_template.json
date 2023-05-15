@@ -1,0 +1,24 @@
+{
+    "range": {
+      "start": "interface (?:FastEthernet|GigabitEthernet)1\\/0\\/(?:1[0-9]|20)",
+      "stop": "!"
+    },
+    "configuration": [
+      "switchport mode access",
+      "switchport access vlan 10",
+      "authentication host-mode multi-domain",
+      "authentication order dot1x mab",
+      "authentication priority dot1x mab",
+      "authentication port-control auto",
+      "authentication periodic",
+      "authentication timer reauthenticate server",
+      "mab",
+      "dot1x pae authenticator",
+      "dot1x timeout tx-period 10",
+      "spanning-tree portfast"
+    ],
+    "exceptions": [
+    "switchport access vlan (?:998|999|1127|210[0-9])",
+    "vrf forwarding Mgmt-vrf"
+  ]
+}
